@@ -5,11 +5,14 @@ Coding Challenge: Build a Twitter app for iPhone
 
 This challenge is part of the iOS Boot Camp Exercise Program. If you're not already part of the Exercise Program, sign up at [http://roadfiresoftware.com/ios-boot-camp/](http://roadfiresoftware.com/ios-boot-camp/) to learn more about the next one.
 
-How to participate in the Exercise Program:
+## How to get started with the Exercise Program (one-time setup)
 
 1. Fork the [YATC-challenge](https://github.com/roadfire/YATC-challenge/) project on GitHub. (See [how to fork](https://help.github.com/articles/fork-a-repo) if you don't know how.)
 1. Clone your fork to your computer. (The [how to fork](https://help.github.com/articles/fork-a-repo) doc helps with this, too.)
 1. Create the Xcode project in your cloned directory.
+
+## How to participate each week
+
 1. Do the week's assignment, making commits along the way, and push your code to your GitHub repo. (This should be pretty familiar if you've used source control.)
 1. When you're ready to submit the week's assignment, [create a Pull Request on GitHub](https://help.github.com/articles/creating-a-pull-request). For the title of the Pull Request, use the form "Week X assignment" so I know what you're submitting. Creating the Pull Request tells me that you've finished the assignment and are ready for a review.
 
