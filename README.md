@@ -3,6 +3,8 @@ YATC: Yet Another Twitter Client
 
 Coding Challenge: Build a Twitter app for iPhone
 
+![](screenshot.png)
+
 This challenge is part of the **iOS Boot Camp Exercise Program**. If you're not already part of the Exercise Program, sign up at [http://roadfiresoftware.com/ios-boot-camp/](http://roadfiresoftware.com/ios-boot-camp/) to learn more about the next one.
 
 ## How to get started (one-time setup)
