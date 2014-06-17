@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4400D09F194F400000ABCDCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D09E194F400000ABCDCC /* Foundation.framework */; };
+		4400D0A1194F400000ABCDCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D0A0194F400000ABCDCC /* CoreGraphics.framework */; };
+		4400D0A3194F400000ABCDCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D0A2194F400000ABCDCC /* UIKit.framework */; };
+		4400D0A9194F400100ABCDCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0A7194F400100ABCDCC /* InfoPlist.strings */; };
+		4400D0AB194F400100ABCDCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400D0AA194F400100ABCDCC /* main.m */; };
+		4400D0AF194F400100ABCDCC /* SMLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400D0AE194F400100ABCDCC /* SMLAppDelegate.m */; };
+		4400D0B2194F400100ABCDCC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0B0194F400100ABCDCC /* Main_iPhone.storyboard */; };
+		4400D0B5194F400100ABCDCC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0B3194F400100ABCDCC /* Main_iPad.storyboard */; };
+		4400D0B8194F400100ABCDCC /* SMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400D0B7194F400100ABCDCC /* SMLViewController.m */; };
+		4400D0BA194F400100ABCDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0B9194F400100ABCDCC /* Images.xcassets */; };
+		4400D0C1194F400100ABCDCC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D0C0194F400100ABCDCC /* XCTest.framework */; };
+		4400D0C2194F400100ABCDCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D09E194F400000ABCDCC /* Foundation.framework */; };
+		4400D0C3194F400100ABCDCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D0A2194F400000ABCDCC /* UIKit.framework */; };
+		4400D0CB194F400100ABCDCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0C9194F400100ABCDCC /* InfoPlist.strings */; };
+		4400D0CD194F400100ABCDCC /* YATC_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4400D0C4194F400100ABCDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4400D093194F400000ABCDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4400D09A194F400000ABCDCC;
+			remoteInfo = "YATC-challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4400D09B194F400000ABCDCC /* YATC-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YATC-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4400D09E194F400000ABCDCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4400D0A0194F400000ABCDCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4400D0A2194F400000ABCDCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4400D0A6194F400100ABCDCC /* YATC-challenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATC-challenge-Info.plist"; sourceTree = "<group>"; };
+		4400D0A8194F400100ABCDCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4400D0AA194F400100ABCDCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4400D0AC194F400100ABCDCC /* YATC-challenge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YATC-challenge-Prefix.pch"; sourceTree = "<group>"; };
+		4400D0AD194F400100ABCDCC /* SMLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMLAppDelegate.h; sourceTree = "<group>"; };
+		4400D0AE194F400100ABCDCC /* SMLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMLAppDelegate.m; sourceTree = "<group>"; };
+		4400D0B1194F400100ABCDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4400D0B4194F400100ABCDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		4400D0B6194F400100ABCDCC /* SMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMLViewController.h; sourceTree = "<group>"; };
+		4400D0B7194F400100ABCDCC /* SMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMLViewController.m; sourceTree = "<group>"; };
+		4400D0B9194F400100ABCDCC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4400D0BF194F400100ABCDCC /* YATC-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YATC-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4400D0C0194F400100ABCDCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4400D0C8194F400100ABCDCC /* YATC-challengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATC-challengeTests-Info.plist"; sourceTree = "<group>"; };
+		4400D0CA194F400100ABCDCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YATC_challengeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4400D098194F400000ABCDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4400D0A1194F400000ABCDCC /* CoreGraphics.framework in Frameworks */,
+				4400D0A3194F400000ABCDCC /* UIKit.framework in Frameworks */,
+				4400D09F194F400000ABCDCC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4400D0BC194F400100ABCDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4400D0C1194F400100ABCDCC /* XCTest.framework in Frameworks */,
+				4400D0C3194F400100ABCDCC /* UIKit.framework in Frameworks */,
+				4400D0C2194F400100ABCDCC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4400D092194F400000ABCDCC = {
+			isa = PBXGroup;
+			children = (
+				4400D0A4194F400000ABCDCC /* YATC-challenge */,
+				4400D0C6194F400100ABCDCC /* YATC-challengeTests */,
+				4400D09D194F400000ABCDCC /* Frameworks */,
+				4400D09C194F400000ABCDCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4400D09C194F400000ABCDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4400D09B194F400000ABCDCC /* YATC-challenge.app */,
+				4400D0BF194F400100ABCDCC /* YATC-challengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4400D09D194F400000ABCDCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4400D09E194F400000ABCDCC /* Foundation.framework */,
+				4400D0A0194F400000ABCDCC /* CoreGraphics.framework */,
+				4400D0A2194F400000ABCDCC /* UIKit.framework */,
+				4400D0C0194F400100ABCDCC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4400D0A4194F400000ABCDCC /* YATC-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				4400D0AD194F400100ABCDCC /* SMLAppDelegate.h */,
+				4400D0AE194F400100ABCDCC /* SMLAppDelegate.m */,
+				4400D0B0194F400100ABCDCC /* Main_iPhone.storyboard */,
+				4400D0B3194F400100ABCDCC /* Main_iPad.storyboard */,
+				4400D0B6194F400100ABCDCC /* SMLViewController.h */,
+				4400D0B7194F400100ABCDCC /* SMLViewController.m */,
+				4400D0B9194F400100ABCDCC /* Images.xcassets */,
+				4400D0A5194F400100ABCDCC /* Supporting Files */,
+			);
+			path = "YATC-challenge";
+			sourceTree = "<group>";
+		};
+		4400D0A5194F400100ABCDCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4400D0A6194F400100ABCDCC /* YATC-challenge-Info.plist */,
+				4400D0A7194F400100ABCDCC /* InfoPlist.strings */,
+				4400D0AA194F400100ABCDCC /* main.m */,
+				4400D0AC194F400100ABCDCC /* YATC-challenge-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4400D0C6194F400100ABCDCC /* YATC-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */,
+				4400D0C7194F400100ABCDCC /* Supporting Files */,
+			);
+			path = "YATC-challengeTests";
+			sourceTree = "<group>";
+		};
+		4400D0C7194F400100ABCDCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4400D0C8194F400100ABCDCC /* YATC-challengeTests-Info.plist */,
+				4400D0C9194F400100ABCDCC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4400D09A194F400000ABCDCC /* YATC-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4400D0D0194F400100ABCDCC /* Build configuration list for PBXNativeTarget "YATC-challenge" */;
+			buildPhases = (
+				4400D097194F400000ABCDCC /* Sources */,
+				4400D098194F400000ABCDCC /* Frameworks */,
+				4400D099194F400000ABCDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YATC-challenge";
+			productName = "YATC-challenge";
+			productReference = 4400D09B194F400000ABCDCC /* YATC-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4400D0BE194F400100ABCDCC /* YATC-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4400D0D3194F400100ABCDCC /* Build configuration list for PBXNativeTarget "YATC-challengeTests" */;
+			buildPhases = (
+				4400D0BB194F400100ABCDCC /* Sources */,
+				4400D0BC194F400100ABCDCC /* Frameworks */,
+				4400D0BD194F400100ABCDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4400D0C5194F400100ABCDCC /* PBXTargetDependency */,
+			);
+			name = "YATC-challengeTests";
+			productName = "YATC-challengeTests";
+			productReference = 4400D0BF194F400100ABCDCC /* YATC-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4400D093194F400000ABCDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SML;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Source Main LLC";
+				TargetAttributes = {
+					4400D0BE194F400100ABCDCC = {
+						TestTargetID = 4400D09A194F400000ABCDCC;
+					};
+				};
+			};
+			buildConfigurationList = 4400D096194F400000ABCDCC /* Build configuration list for PBXProject "YATC-challenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4400D092194F400000ABCDCC;
+			productRefGroup = 4400D09C194F400000ABCDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4400D09A194F400000ABCDCC /* YATC-challenge */,
+				4400D0BE194F400100ABCDCC /* YATC-challengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4400D099194F400000ABCDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4400D0B5194F400100ABCDCC /* Main_iPad.storyboard in Resources */,
+				4400D0BA194F400100ABCDCC /* Images.xcassets in Resources */,
+				4400D0B2194F400100ABCDCC /* Main_iPhone.storyboard in Resources */,
+				4400D0A9194F400100ABCDCC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4400D0BD194F400100ABCDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4400D0CB194F400100ABCDCC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4400D097194F400000ABCDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4400D0B8194F400100ABCDCC /* SMLViewController.m in Sources */,
+				4400D0AB194F400100ABCDCC /* main.m in Sources */,
+				4400D0AF194F400100ABCDCC /* SMLAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4400D0BB194F400100ABCDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4400D0CD194F400100ABCDCC /* YATC_challengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4400D0C5194F400100ABCDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4400D09A194F400000ABCDCC /* YATC-challenge */;
+			targetProxy = 4400D0C4194F400100ABCDCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4400D0A7194F400100ABCDCC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4400D0A8194F400100ABCDCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4400D0B0194F400100ABCDCC /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4400D0B1194F400100ABCDCC /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4400D0B3194F400100ABCDCC /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4400D0B4194F400100ABCDCC /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		4400D0C9194F400100ABCDCC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4400D0CA194F400100ABCDCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4400D0CE194F400100ABCDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4400D0CF194F400100ABCDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4400D0D1194F400100ABCDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				INFOPLIST_FILE = "YATC-challenge/YATC-challenge-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4400D0D2194F400100ABCDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				INFOPLIST_FILE = "YATC-challenge/YATC-challenge-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4400D0D4194F400100ABCDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YATC-challenge.app/YATC-challenge";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "YATC-challengeTests/YATC-challengeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4400D0D5194F400100ABCDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YATC-challenge.app/YATC-challenge";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				INFOPLIST_FILE = "YATC-challengeTests/YATC-challengeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4400D096194F400000ABCDCC /* Build configuration list for PBXProject "YATC-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4400D0CE194F400100ABCDCC /* Debug */,
+				4400D0CF194F400100ABCDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4400D0D0194F400100ABCDCC /* Build configuration list for PBXNativeTarget "YATC-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4400D0D1194F400100ABCDCC /* Debug */,
+				4400D0D2194F400100ABCDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4400D0D3194F400100ABCDCC /* Build configuration list for PBXNativeTarget "YATC-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4400D0D4194F400100ABCDCC /* Debug */,
+				4400D0D5194F400100ABCDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4400D093194F400000ABCDCC /* Project object */;
+}
