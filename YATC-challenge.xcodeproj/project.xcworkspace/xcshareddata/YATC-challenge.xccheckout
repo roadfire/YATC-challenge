@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B2324942-3308-4CFB-AF6B-E203AD9E82E9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>YATC-challenge</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>93CCFD07-68B8-4F3A-A923-CCB8BF049E47</key>
+		<string>https://github.com/vscarpenter/YATC-challenge.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>YATC-challenge.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>93CCFD07-68B8-4F3A-A923-CCB8BF049E47</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vscarpenter/YATC-challenge.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>93CCFD07-68B8-4F3A-A923-CCB8BF049E47</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>93CCFD07-68B8-4F3A-A923-CCB8BF049E47</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YATC-challenge</string>
+		</dict>
+	</array>
+</dict>
+</plist>
