@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VINViewController : UIViewController
+@interface VINViewController : UITableViewController
 
 @end
