@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB5E0C83194FD5DC00D9F4E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5E0C82194FD5DC00D9F4E8 /* Foundation.framework */; };
+		FB5E0C85194FD5DC00D9F4E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5E0C84194FD5DC00D9F4E8 /* CoreGraphics.framework */; };
+		FB5E0C87194FD5DC00D9F4E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5E0C86194FD5DC00D9F4E8 /* UIKit.framework */; };
+		FB5E0C8D194FD5DC00D9F4E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB5E0C8B194FD5DC00D9F4E8 /* InfoPlist.strings */; };
+		FB5E0C8F194FD5DC00D9F4E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0C8E194FD5DC00D9F4E8 /* main.m */; };
+		FB5E0C93194FD5DC00D9F4E8 /* VINAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0C92194FD5DC00D9F4E8 /* VINAppDelegate.m */; };
+		FB5E0C96194FD5DC00D9F4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5E0C94194FD5DC00D9F4E8 /* Main.storyboard */; };
+		FB5E0C99194FD5DC00D9F4E8 /* VINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0C98194FD5DC00D9F4E8 /* VINViewController.m */; };
+		FB5E0C9B194FD5DC00D9F4E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5E0C9A194FD5DC00D9F4E8 /* Images.xcassets */; };
+		FB5E0CA2194FD5DC00D9F4E8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5E0CA1194FD5DC00D9F4E8 /* XCTest.framework */; };
+		FB5E0CA3194FD5DC00D9F4E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5E0C82194FD5DC00D9F4E8 /* Foundation.framework */; };
+		FB5E0CA4194FD5DC00D9F4E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5E0C86194FD5DC00D9F4E8 /* UIKit.framework */; };
+		FB5E0CAC194FD5DC00D9F4E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB5E0CAA194FD5DC00D9F4E8 /* InfoPlist.strings */; };
+		FB5E0CAE194FD5DC00D9F4E8 /* YATC_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0CAD194FD5DC00D9F4E8 /* YATC_challengeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB5E0CA5194FD5DC00D9F4E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB5E0C77194FD5DC00D9F4E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB5E0C7E194FD5DC00D9F4E8;
+			remoteInfo = "YATC-challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB5E0C7F194FD5DC00D9F4E8 /* YATC-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YATC-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB5E0C82194FD5DC00D9F4E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FB5E0C84194FD5DC00D9F4E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FB5E0C86194FD5DC00D9F4E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FB5E0C8A194FD5DC00D9F4E8 /* YATC-challenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATC-challenge-Info.plist"; sourceTree = "<group>"; };
+		FB5E0C8C194FD5DC00D9F4E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB5E0C8E194FD5DC00D9F4E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB5E0C90194FD5DC00D9F4E8 /* YATC-challenge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YATC-challenge-Prefix.pch"; sourceTree = "<group>"; };
+		FB5E0C91194FD5DC00D9F4E8 /* VINAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VINAppDelegate.h; sourceTree = "<group>"; };
+		FB5E0C92194FD5DC00D9F4E8 /* VINAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VINAppDelegate.m; sourceTree = "<group>"; };
+		FB5E0C95194FD5DC00D9F4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB5E0C97194FD5DC00D9F4E8 /* VINViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VINViewController.h; sourceTree = "<group>"; };
+		FB5E0C98194FD5DC00D9F4E8 /* VINViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VINViewController.m; sourceTree = "<group>"; };
+		FB5E0C9A194FD5DC00D9F4E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FB5E0CA0194FD5DC00D9F4E8 /* YATC-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YATC-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB5E0CA1194FD5DC00D9F4E8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FB5E0CA9194FD5DC00D9F4E8 /* YATC-challengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATC-challengeTests-Info.plist"; sourceTree = "<group>"; };
+		FB5E0CAB194FD5DC00D9F4E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB5E0CAD194FD5DC00D9F4E8 /* YATC_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YATC_challengeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB5E0C7C194FD5DC00D9F4E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5E0C85194FD5DC00D9F4E8 /* CoreGraphics.framework in Frameworks */,
+				FB5E0C87194FD5DC00D9F4E8 /* UIKit.framework in Frameworks */,
+				FB5E0C83194FD5DC00D9F4E8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5E0C9D194FD5DC00D9F4E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5E0CA2194FD5DC00D9F4E8 /* XCTest.framework in Frameworks */,
+				FB5E0CA4194FD5DC00D9F4E8 /* UIKit.framework in Frameworks */,
+				FB5E0CA3194FD5DC00D9F4E8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB5E0C76194FD5DC00D9F4E8 = {
+			isa = PBXGroup;
+			children = (
+				FB5E0C88194FD5DC00D9F4E8 /* YATC-challenge */,
+				FB5E0CA7194FD5DC00D9F4E8 /* YATC-challengeTests */,
+				FB5E0C81194FD5DC00D9F4E8 /* Frameworks */,
+				FB5E0C80194FD5DC00D9F4E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB5E0C80194FD5DC00D9F4E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0C7F194FD5DC00D9F4E8 /* YATC-challenge.app */,
+				FB5E0CA0194FD5DC00D9F4E8 /* YATC-challengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB5E0C81194FD5DC00D9F4E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0C82194FD5DC00D9F4E8 /* Foundation.framework */,
+				FB5E0C84194FD5DC00D9F4E8 /* CoreGraphics.framework */,
+				FB5E0C86194FD5DC00D9F4E8 /* UIKit.framework */,
+				FB5E0CA1194FD5DC00D9F4E8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB5E0C88194FD5DC00D9F4E8 /* YATC-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0C91194FD5DC00D9F4E8 /* VINAppDelegate.h */,
+				FB5E0C92194FD5DC00D9F4E8 /* VINAppDelegate.m */,
+				FB5E0C94194FD5DC00D9F4E8 /* Main.storyboard */,
+				FB5E0C97194FD5DC00D9F4E8 /* VINViewController.h */,
+				FB5E0C98194FD5DC00D9F4E8 /* VINViewController.m */,
+				FB5E0C9A194FD5DC00D9F4E8 /* Images.xcassets */,
+				FB5E0C89194FD5DC00D9F4E8 /* Supporting Files */,
+			);
+			path = "YATC-challenge";
+			sourceTree = "<group>";
+		};
+		FB5E0C89194FD5DC00D9F4E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0C8A194FD5DC00D9F4E8 /* YATC-challenge-Info.plist */,
+				FB5E0C8B194FD5DC00D9F4E8 /* InfoPlist.strings */,
+				FB5E0C8E194FD5DC00D9F4E8 /* main.m */,
+				FB5E0C90194FD5DC00D9F4E8 /* YATC-challenge-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB5E0CA7194FD5DC00D9F4E8 /* YATC-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0CAD194FD5DC00D9F4E8 /* YATC_challengeTests.m */,
+				FB5E0CA8194FD5DC00D9F4E8 /* Supporting Files */,
+			);
+			path = "YATC-challengeTests";
+			sourceTree = "<group>";
+		};
+		FB5E0CA8194FD5DC00D9F4E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0CA9194FD5DC00D9F4E8 /* YATC-challengeTests-Info.plist */,
+				FB5E0CAA194FD5DC00D9F4E8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB5E0C7E194FD5DC00D9F4E8 /* YATC-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB5E0CB1194FD5DC00D9F4E8 /* Build configuration list for PBXNativeTarget "YATC-challenge" */;
+			buildPhases = (
+				FB5E0C7B194FD5DC00D9F4E8 /* Sources */,
+				FB5E0C7C194FD5DC00D9F4E8 /* Frameworks */,
+				FB5E0C7D194FD5DC00D9F4E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YATC-challenge";
+			productName = "YATC-challenge";
+			productReference = FB5E0C7F194FD5DC00D9F4E8 /* YATC-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB5E0C9F194FD5DC00D9F4E8 /* YATC-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB5E0CB4194FD5DC00D9F4E8 /* Build configuration list for PBXNativeTarget "YATC-challengeTests" */;
+			buildPhases = (
+				FB5E0C9C194FD5DC00D9F4E8 /* Sources */,
+				FB5E0C9D194FD5DC00D9F4E8 /* Frameworks */,
+				FB5E0C9E194FD5DC00D9F4E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB5E0CA6194FD5DC00D9F4E8 /* PBXTargetDependency */,
+			);
+			name = "YATC-challengeTests";
+			productName = "YATC-challengeTests";
+			productReference = FB5E0CA0194FD5DC00D9F4E8 /* YATC-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB5E0C77194FD5DC00D9F4E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VIN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Vinny Carpenter";
+				TargetAttributes = {
+					FB5E0C9F194FD5DC00D9F4E8 = {
+						TestTargetID = FB5E0C7E194FD5DC00D9F4E8;
+					};
+				};
+			};
+			buildConfigurationList = FB5E0C7A194FD5DC00D9F4E8 /* Build configuration list for PBXProject "YATC-challenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB5E0C76194FD5DC00D9F4E8;
+			productRefGroup = FB5E0C80194FD5DC00D9F4E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB5E0C7E194FD5DC00D9F4E8 /* YATC-challenge */,
+				FB5E0C9F194FD5DC00D9F4E8 /* YATC-challengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB5E0C7D194FD5DC00D9F4E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5E0C9B194FD5DC00D9F4E8 /* Images.xcassets in Resources */,
+				FB5E0C8D194FD5DC00D9F4E8 /* InfoPlist.strings in Resources */,
+				FB5E0C96194FD5DC00D9F4E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5E0C9E194FD5DC00D9F4E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5E0CAC194FD5DC00D9F4E8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB5E0C7B194FD5DC00D9F4E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5E0C93194FD5DC00D9F4E8 /* VINAppDelegate.m in Sources */,
+				FB5E0C99194FD5DC00D9F4E8 /* VINViewController.m in Sources */,
+				FB5E0C8F194FD5DC00D9F4E8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5E0C9C194FD5DC00D9F4E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5E0CAE194FD5DC00D9F4E8 /* YATC_challengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB5E0CA6194FD5DC00D9F4E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB5E0C7E194FD5DC00D9F4E8 /* YATC-challenge */;
+			targetProxy = FB5E0CA5194FD5DC00D9F4E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB5E0C8B194FD5DC00D9F4E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB5E0C8C194FD5DC00D9F4E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FB5E0C94194FD5DC00D9F4E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB5E0C95194FD5DC00D9F4E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB5E0CAA194FD5DC00D9F4E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB5E0CAB194FD5DC00D9F4E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB5E0CAF194FD5DC00D9F4E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FB5E0CB0194FD5DC00D9F4E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB5E0CB2194FD5DC00D9F4E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				INFOPLIST_FILE = "YATC-challenge/YATC-challenge-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FB5E0CB3194FD5DC00D9F4E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				INFOPLIST_FILE = "YATC-challenge/YATC-challenge-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FB5E0CB5194FD5DC00D9F4E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YATC-challenge.app/YATC-challenge";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "YATC-challengeTests/YATC-challengeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FB5E0CB6194FD5DC00D9F4E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YATC-challenge.app/YATC-challenge";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC-challenge/YATC-challenge-Prefix.pch";
+				INFOPLIST_FILE = "YATC-challengeTests/YATC-challengeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB5E0C7A194FD5DC00D9F4E8 /* Build configuration list for PBXProject "YATC-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5E0CAF194FD5DC00D9F4E8 /* Debug */,
+				FB5E0CB0194FD5DC00D9F4E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB5E0CB1194FD5DC00D9F4E8 /* Build configuration list for PBXNativeTarget "YATC-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5E0CB2194FD5DC00D9F4E8 /* Debug */,
+				FB5E0CB3194FD5DC00D9F4E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB5E0CB4194FD5DC00D9F4E8 /* Build configuration list for PBXNativeTarget "YATC-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5E0CB5194FD5DC00D9F4E8 /* Debug */,
+				FB5E0CB6194FD5DC00D9F4E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB5E0C77194FD5DC00D9F4E8 /* Project object */;
+}
