@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
-@interface SMLViewController : UIViewController
+@interface SMLViewController : UITableViewController
+
+@property (nonatomic) ACAccountStore *accountStore;
 
 @end

@@ -22,6 +22,7 @@
 		4400D0C3194F400100ABCDCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400D0A2194F400000ABCDCC /* UIKit.framework */; };
 		4400D0CB194F400100ABCDCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0C9194F400100ABCDCC /* InfoPlist.strings */; };
 		4400D0CD194F400100ABCDCC /* YATC_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */; };
+		4426EA3D19589943000815CD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4426EA3C19589943000815CD /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4400D0C8194F400100ABCDCC /* YATC-challengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATC-challengeTests-Info.plist"; sourceTree = "<group>"; };
 		4400D0CA194F400100ABCDCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YATC_challengeTests.m; sourceTree = "<group>"; };
+		4426EA3C19589943000815CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4426EA3D19589943000815CD /* Social.framework in Frameworks */,
 				4400D0A1194F400000ABCDCC /* CoreGraphics.framework in Frameworks */,
 				4400D0A3194F400000ABCDCC /* UIKit.framework in Frameworks */,
 				4400D09F194F400000ABCDCC /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		4400D09D194F400000ABCDCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4426EA3C19589943000815CD /* Social.framework */,
 				4400D09E194F400000ABCDCC /* Foundation.framework */,
 				4400D0A0194F400000ABCDCC /* CoreGraphics.framework */,
 				4400D0A2194F400000ABCDCC /* UIKit.framework */,
@@ -471,6 +475,7 @@
 				4400D0D2194F400100ABCDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4400D0D3194F400100ABCDCC /* Build configuration list for PBXNativeTarget "YATC-challengeTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +484,7 @@
 				4400D0D5194F400100ABCDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
