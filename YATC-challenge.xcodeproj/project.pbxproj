@@ -23,6 +23,9 @@
 		4400D0CB194F400100ABCDCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4400D0C9194F400100ABCDCC /* InfoPlist.strings */; };
 		4400D0CD194F400100ABCDCC /* YATC_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */; };
 		4426EA3D19589943000815CD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4426EA3C19589943000815CD /* Social.framework */; };
+		4441B3911962FCA7004A74A7 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4441B38F1962FCA7004A74A7 /* Placeholder@2x.png */; };
+		4441B3921962FCA7004A74A7 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4441B3901962FCA7004A74A7 /* Placeholder.png */; };
+		4441B39519630024004A74A7 /* SMLTwitterEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4441B39419630024004A74A7 /* SMLTwitterEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,10 @@
 		4400D0CA194F400100ABCDCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4400D0CC194F400100ABCDCC /* YATC_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YATC_challengeTests.m; sourceTree = "<group>"; };
 		4426EA3C19589943000815CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4441B38F1962FCA7004A74A7 /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder@2x.png"; path = "images/Placeholder@2x.png"; sourceTree = "<group>"; };
+		4441B3901962FCA7004A74A7 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = images/Placeholder.png; sourceTree = "<group>"; };
+		4441B3931962FFDA004A74A7 /* SMLTwitterEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMLTwitterEntry.h; sourceTree = "<group>"; };
+		4441B39419630024004A74A7 /* SMLTwitterEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLTwitterEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,7 @@
 		4400D092194F400000ABCDCC = {
 			isa = PBXGroup;
 			children = (
+				4441B38E1962FC84004A74A7 /* images */,
 				4400D0A4194F400000ABCDCC /* YATC-challenge */,
 				4400D0C6194F400100ABCDCC /* YATC-challengeTests */,
 				4400D09D194F400000ABCDCC /* Frameworks */,
@@ -126,6 +134,8 @@
 				4400D0B7194F400100ABCDCC /* SMLViewController.m */,
 				4400D0B9194F400100ABCDCC /* Images.xcassets */,
 				4400D0A5194F400100ABCDCC /* Supporting Files */,
+				4441B3931962FFDA004A74A7 /* SMLTwitterEntry.h */,
+				4441B39419630024004A74A7 /* SMLTwitterEntry.m */,
 			);
 			path = "YATC-challenge";
 			sourceTree = "<group>";
@@ -157,6 +167,15 @@
 				4400D0C9194F400100ABCDCC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4441B38E1962FC84004A74A7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4441B38F1962FCA7004A74A7 /* Placeholder@2x.png */,
+				4441B3901962FCA7004A74A7 /* Placeholder.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4441B3911962FCA7004A74A7 /* Placeholder@2x.png in Resources */,
+				4441B3921962FCA7004A74A7 /* Placeholder.png in Resources */,
 				4400D0B5194F400100ABCDCC /* Main_iPad.storyboard in Resources */,
 				4400D0BA194F400100ABCDCC /* Images.xcassets in Resources */,
 				4400D0B2194F400100ABCDCC /* Main_iPhone.storyboard in Resources */,
@@ -259,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4400D0B8194F400100ABCDCC /* SMLViewController.m in Sources */,
+				4441B39519630024004A74A7 /* SMLTwitterEntry.m in Sources */,
 				4400D0AB194F400100ABCDCC /* main.m in Sources */,
 				4400D0AF194F400100ABCDCC /* SMLAppDelegate.m in Sources */,
 			);
