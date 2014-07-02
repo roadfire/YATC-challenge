@@ -10,5 +10,5 @@
 
 @interface SMLTwitterLoader : NSObject
   - (void)loadImageWithCallback:(NSString *)urlString withCallback:(void (^)(UIImage *image))callback;
-- (void)loadTwitterDataWithCallback:(NSString *)urlString withParams:(NSDictionary*) params withCallback:(void (^)(NSArray *results))callback withDelegateCallback:(DelegateCallback)delegateCallback;
+- (void)loadTwitterDataWithCallback:(NSString *)urlString withParams:(NSDictionary*) params withProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback;
 @end

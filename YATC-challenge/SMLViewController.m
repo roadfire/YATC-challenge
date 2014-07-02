@@ -41,9 +41,22 @@
         [self.twitterLoader
          loadTwitterDataWithCallback:@"https://api.twitter.com/1.1/statuses/home_timeline.json"
          withParams:params
-         withCallback:^(NSArray *results) {
+         withProgressCallback:^(CGFloat totalBytes, CGFloat receivedBytes){
              dispatch_async(dispatch_get_main_queue(), ^{
-                 [self.progressBar setProgress:0.5];
+                 CGFloat percentComplete = (0.8)*(receivedBytes/totalBytes);
+                 NSLog(@"Setting Status: %f/%f = %f", receivedBytes, totalBytes, percentComplete);
+                 [self.progressBar setProgress:percentComplete animated:false];
+             });
+         }
+         withCompleteCallback:^(NSData* data) {
+             NSError *jsonError;
+             NSArray *results =
+             [NSJSONSerialization
+              JSONObjectWithData:data
+              options:NSJSONReadingAllowFragments error:&jsonError];
+             
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.progressBar setProgress:0.9];
              });
              self.twitterTimeline = [[NSMutableArray alloc] initWithCapacity:100];
              for( NSDictionary *entry in results){
@@ -53,21 +66,14 @@
                  newEntry.iconImageUrl = entry[@"user"][@"profile_image_url"];
                  [self.twitterTimeline addObject:newEntry];
              }
-             NSLog(@"Timeline Response: %@\n", results);
              [self.activityIndicator stopAnimating];
              dispatch_async(dispatch_get_main_queue(), ^{
                  [self.tableView reloadData];
                  [self.progressBar setProgress:1.0];
              });
          }
-         withDelegateCallback:^(CGFloat totalBytes, CGFloat receivedBytes){
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 CGFloat percentComplete = (1.0)*(receivedBytes/totalBytes);
-                 [self.progressBar setProgress:percentComplete];
-             });
-             
-             
-         }];
+         
+         ];
     }
 }
 
