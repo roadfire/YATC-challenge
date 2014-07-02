@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <Social/Social.h>
 
 
 @interface SMLViewController : UITableViewController
