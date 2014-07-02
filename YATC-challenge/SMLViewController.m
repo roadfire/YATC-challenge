@@ -30,6 +30,7 @@
     NSLog(@"Hello World");
     self.twitterLoader = [[SMLTwitterLoader alloc] init];
     
+    [self.progressBar setProgress:0];
     
     NSDictionary *params = @{@"count" : @"100"};
     
@@ -37,8 +38,13 @@
     
     if (self) {
         
-        [self.twitterLoader loadTwitterDataWithCallback:@"https://api.twitter.com"
-         @"/1.1/statuses/home_timeline.json" withParams:params withCallback:^(NSArray *results) {
+        [self.twitterLoader
+         loadTwitterDataWithCallback:@"https://api.twitter.com/1.1/statuses/home_timeline.json"
+         withParams:params
+         withCallback:^(NSArray *results) {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.progressBar setProgress:0.5];
+             });
              self.twitterTimeline = [[NSMutableArray alloc] initWithCapacity:100];
              for( NSDictionary *entry in results){
                  SMLTwitterEntry *newEntry = [[SMLTwitterEntry alloc] init];
@@ -47,12 +53,20 @@
                  newEntry.iconImageUrl = entry[@"user"][@"profile_image_url"];
                  [self.twitterTimeline addObject:newEntry];
              }
-             
              NSLog(@"Timeline Response: %@\n", results);
              [self.activityIndicator stopAnimating];
              dispatch_async(dispatch_get_main_queue(), ^{
                  [self.tableView reloadData];
+                 [self.progressBar setProgress:1.0];
              });
+         }
+         withDelegateCallback:^(CGFloat totalBytes, CGFloat receivedBytes){
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 CGFloat percentComplete = (1.0)*(receivedBytes/totalBytes);
+                 [self.progressBar setProgress:percentComplete];
+             });
+             
+             
          }];
     }
 }

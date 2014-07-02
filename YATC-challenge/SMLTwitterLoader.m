@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SMLTwitterLoader.h"
 #import <Accounts/Accounts.h>
+#import "SMLSessionDelegate.h"
 
 @interface SMLTwitterLoader ()
 
@@ -31,7 +32,7 @@
 }
 
 - (void)loadImageWithCallback:(NSString *)urlString withCallback:(void (^)(UIImage *image))callback
-{   
+{
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
@@ -51,7 +52,7 @@
     [task resume];
 }
 
-- (void)loadTwitterDataWithCallback:(NSString *)urlString withParams:(NSDictionary*) params withCallback:(void (^)(NSArray *results))callback
+- (void)loadTwitterDataWithCallback:(NSString *)urlString withParams:(NSDictionary*) params withCallback:(void (^)(NSArray *results))callback withDelegateCallback:(DelegateCallback)delegateCallback;
 {
     //  Step 0: Check that the user has local Twitter accounts
     if ([self userHasAccessToTwitter]) {
@@ -80,36 +81,49 @@
                  //  Attach an account to the request
                  [request setAccount:[twitterAccounts lastObject]];
                  
-                 //  Step 3:  Execute the request
-                 [request performRequestWithHandler:
-                  ^(NSData *responseData,
-                    NSHTTPURLResponse *urlResponse,
-                    NSError *error) {
-                      
-                      if (responseData) {
-                          if (urlResponse.statusCode >= 200 &&
-                              urlResponse.statusCode < 300) {
-                              
-                              NSError *jsonError;
-                              NSArray *results =
-                              [NSJSONSerialization
-                               JSONObjectWithData:responseData
-                               options:NSJSONReadingAllowFragments error:&jsonError];
-                              if (results) {
-                                  callback(results);
-                              }
-                              else {
-                                  // Our JSON deserialization went awry
-                                  NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
-                              }
-                          }
-                          else {
-                              // The server did not respond ... were we rate-limited?
-                              NSLog(@"The response status code is %d",
-                                    urlResponse.statusCode);
-                          }
-                      }
-                  }];
+                 //MYDelegateHandler delegate = new myDelegate
+                 //delegate.setcallbacker = ^()[{
+             //docallback(yada)
+             //}]
+                 
+                 NSURLRequest *urlRequest = [request preparedURLRequest];
+                 NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+
+                 SMLSessionDelegate *delegate = [[SMLSessionDelegate alloc] initWithCallback:delegateCallback];
+                 
+                 NSURLSession *session = [NSURLSession sessionWithConfiguration:config
+                                                                       delegate:delegate
+                                                                  delegateQueue:[NSOperationQueue currentQueue]];
+                 
+                 NSURLSessionDataTask *task = [session dataTaskWithRequest:urlRequest
+                                                         completionHandler:^(NSData *responseData, NSURLResponse *urlResponse, NSError *error) {
+                                                             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)urlResponse;
+                                                             if (responseData) {
+                                                                 if (httpResponse.statusCode >= 200 &&
+                                                                     httpResponse.statusCode < 300) {
+                                                                     
+                                                                     NSError *jsonError;
+                                                                     NSArray *results =
+                                                                     [NSJSONSerialization
+                                                                      JSONObjectWithData:responseData
+                                                                      options:NSJSONReadingAllowFragments error:&jsonError];
+                                                                     if (results) {
+                                                                         callback(results);
+                                                                     }
+                                                                     else {
+                                                                         // Our JSON deserialization went awry
+                                                                         NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
+                                                                     }
+                                                                 }
+                                                                 else {
+                                                                     // The server did not respond ... were we rate-limited?
+                                                                     NSLog(@"The response status code is %d",
+                                                                           httpResponse.statusCode);
+                                                                 }
+                                                             }
+                                                         }];
+                 
+                 [task resume];
              }
              else {
                  // Access was not granted, or an error occurred

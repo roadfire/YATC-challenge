@@ -28,7 +28,15 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    int64_t total = 500;
+    int64_t received = 250;
+    
+    CGFloat fTotal = total;
+    CGFloat fReceived = received;
+    
+    CGFloat percent = fReceived/fTotal;
+    
+    XCTAssertEqual(percent, 0.5);
 }
 
 @end

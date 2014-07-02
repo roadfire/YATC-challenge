@@ -27,6 +27,7 @@
 		4441B3911962FCA7004A74A7 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4441B38F1962FCA7004A74A7 /* Placeholder@2x.png */; };
 		4441B3921962FCA7004A74A7 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4441B3901962FCA7004A74A7 /* Placeholder.png */; };
 		4441B39519630024004A74A7 /* SMLTwitterEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4441B39419630024004A74A7 /* SMLTwitterEntry.m */; };
+		44DB487C19647F6200D82FE2 /* SMLSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DB487B19647F6200D82FE2 /* SMLSessionDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		4441B3901962FCA7004A74A7 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = images/Placeholder.png; sourceTree = "<group>"; };
 		4441B3931962FFDA004A74A7 /* SMLTwitterEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMLTwitterEntry.h; sourceTree = "<group>"; };
 		4441B39419630024004A74A7 /* SMLTwitterEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLTwitterEntry.m; sourceTree = "<group>"; };
+		44DB487B19647F6200D82FE2 /* SMLSessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLSessionDelegate.m; sourceTree = "<group>"; };
+		44DB487D19647F8100D82FE2 /* SMLSessionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMLSessionDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				4441B39419630024004A74A7 /* SMLTwitterEntry.m */,
 				4414E499196311D4001D9676 /* SMLTwitterLoader.h */,
 				4414E49A196311E8001D9676 /* SMLTwitterLoader.m */,
+				44DB487D19647F8100D82FE2 /* SMLSessionDelegate.h */,
+				44DB487B19647F6200D82FE2 /* SMLSessionDelegate.m */,
 			);
 			path = "YATC-challenge";
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44DB487C19647F6200D82FE2 /* SMLSessionDelegate.m in Sources */,
 				4414E49B196311E8001D9676 /* SMLTwitterLoader.m in Sources */,
 				4400D0B8194F400100ABCDCC /* SMLViewController.m in Sources */,
 				4441B39519630024004A74A7 /* SMLTwitterEntry.m in Sources */,
