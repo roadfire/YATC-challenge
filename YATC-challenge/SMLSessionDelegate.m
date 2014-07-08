@@ -8,19 +8,21 @@
 
 #import "SMLSessionDelegate.h"
 
-@interface SMLSessionDelegate()
+@interface SMLSessionDelegate()<NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 
-@property (nonatomic, copy) DelegateCallback callback;
+@property (nonatomic, copy) ProgressCallback progressCallback;
+@property (nonatomic, copy) CompleteCallback completeCallback;
 
 @end
 
 @implementation SMLSessionDelegate
 
-- (instancetype)initWithCallback:(DelegateCallback)callback
+- (instancetype)initWithProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback
 {
     self = [super init];
     if(self){
-        self.callback = callback;
+        self.progressCallback = progressCallback;
+        self.completeCallback = completeCallback;
     }
     return self;
 }
@@ -30,10 +32,7 @@
           dataTask:(NSURLSessionDataTask *)dataTask
     didReceiveData:(NSData *)data
 {
-    CGFloat totalBytes = dataTask.countOfBytesExpectedToReceive;
-    CGFloat receivedBytes = dataTask.countOfBytesReceived;
     
-    self.callback(totalBytes, receivedBytes);
 }
 
 - (void)URLSession:(NSURLSession *)session
@@ -41,18 +40,11 @@
 didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
 {
-    CGFloat totalBytes = dataTask.countOfBytesExpectedToReceive;
-    CGFloat receivedBytes = dataTask.countOfBytesReceived;
-    
-    self.callback(totalBytes, receivedBytes);
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
-    CGFloat totalBytes = task.countOfBytesExpectedToReceive;
-    CGFloat receivedBytes = task.countOfBytesReceived;
     
-    self.callback(totalBytes, receivedBytes);
 }
 
 - (void)URLSession:(NSURLSession *)session
@@ -60,10 +52,32 @@ didReceiveResponse:(NSURLResponse *)response
  willCacheResponse:(NSCachedURLResponse *)proposedResponse
  completionHandler:(void (^)(NSCachedURLResponse *cachedResponse))completionHandler
 {
-    CGFloat totalBytes = dataTask.countOfBytesExpectedToReceive;
-    CGFloat receivedBytes = dataTask.countOfBytesReceived;
+  
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    NSLog(@"didFinishDownloadingToURL");
+    NSData *responseData = [NSData dataWithContentsOfURL:location];
+    self.completeCallback(responseData);
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
+    NSLog(@"dunno");
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
     
-    self.callback(totalBytes, receivedBytes);
+    NSURLResponse *response = downloadTask.response;
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+    NSDictionary *headers = [httpResponse allHeaderFields];
+    
+    NSString *length = headers[@"content-length"];
+    
+    //totalBytesExpectedToWrite is always -1 converty content length to bytes
+    CGFloat totalBytes = 8 * (CGFloat)[length floatValue];
+    CGFloat receivedBytes = totalBytesWritten;
+    
+    self.progressCallback(totalBytes, receivedBytes);
 }
 
 @end

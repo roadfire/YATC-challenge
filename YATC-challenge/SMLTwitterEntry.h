@@ -9,6 +9,7 @@
 
 @interface SMLTwitterEntry : NSObject
 
+@property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) UIImage *userIcon;
 @property (nonatomic, strong) NSString *detail;

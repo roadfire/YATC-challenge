@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Source Main LLC. All rights reserved.
 //
 
-@interface SMLSessionDelegate : NSObject<NSURLSessionDataDelegate>
+@interface SMLSessionDelegate : NSObject<NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 
-typedef void(^DelegateCallback)(CGFloat totalBytes, CGFloat receivedBytes);
+typedef void(^ProgressCallback)(CGFloat totalBytes, CGFloat receivedBytes);
+typedef void(^CompleteCallback)(NSData* data);
 
-- (instancetype)initWithCallback:(DelegateCallback)callback;
+- (instancetype)initWithProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback;
 
 @end

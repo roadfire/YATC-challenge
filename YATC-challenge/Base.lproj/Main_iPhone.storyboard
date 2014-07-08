@@ -51,9 +51,26 @@
                             <outlet property="delegate" destination="Fsg-Tj-yoi" id="oy3-wJ-fN7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="YATC" id="eUf-be-lIN"/>
+                    <navigationItem key="navigationItem" title="YATC" id="eUf-be-lIN">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="qdq-Ub-IdQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3k7-Zv-cRk">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doPost:" destination="Fsg-Tj-yoi" eventType="touchUpInside" id="vvT-yH-KtF"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="BYK-Z4-dwR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="activityIndicator" destination="wIs-ha-19e" id="avB-CY-dEy"/>
+                        <outlet property="postButton" destination="3k7-Zv-cRk" id="ILW-wQ-qQs"/>
                         <outlet property="progressBar" destination="tG9-S8-iLN" id="kge-oA-Z7Y"/>
                     </connections>
                 </tableViewController>
