@@ -9,6 +9,8 @@
 #import "SMLSessionDelegate.h"
 
 @interface SMLTwitterLoader : NSObject
-  - (void)loadImageWithCallback:(NSString *)urlString withCallback:(void (^)(UIImage *image))callback;
-- (void)loadTwitterDataWithCallback:(NSString *)urlString withParams:(NSDictionary*) params withProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback;
+
+- (void)loadImage :(NSString *)urlString withCallback:(void (^)(UIImage *image))callback;
+- (void)loadTwitterData:(NSString *)urlString withParams:(NSDictionary*) params withProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback;
+
 @end

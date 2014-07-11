@@ -1,4 +1,3 @@
-//
 //  SMLViewController.m
 //  YATC-challenge
 //
@@ -21,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (strong, nonatomic) IBOutlet UIButton *postButton;
 @property (strong, nonatomic) IBOutlet UIRefreshControl *refreshControl;
+@property (nonatomic) bool loading;
 @end
 
 @implementation SMLViewController
@@ -31,16 +31,22 @@
     
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    self.loading = false;
     NSDictionary *params = @{@"count" : @"100"};
     
     if (self) {
         
+        
+        
+        UIFont* icon = [UIFont fontWithName:@"Ionicons" size:40];
+        
+        [self.postButton setFont:icon];
+        [self.postButton setTitle:@"\uf17d" forState:UIControlStateNormal];
+        
+        
         self.twitterLoader = [[SMLTwitterLoader alloc] init];
         
-        
-        
-        [self loadTwitter:params replace:false];
+        [self loadTwitter:params replace:false withCallback:nil];
         
         
         self.refreshControl = [[UIRefreshControl alloc] init];
@@ -54,53 +60,64 @@
 - (void)refresh:(id)sender {
     NSLog(@"Refreshing");
     NSDictionary *params = @{@"count" : @"100"};
-    [self loadTwitter:params replace:true];
+    [self loadTwitter:params replace:true withCallback:^{
+        [(UIRefreshControl *)sender endRefreshing];
+    }];
     // End Refreshing
-    [(UIRefreshControl *)sender endRefreshing];
+    
 }
 
-- (void) loadTwitter:(NSDictionary *) params replace:(bool)replace
+- (void) loadTwitter:(NSDictionary *) params replace:(bool)replace withCallback:(void (^)())callback
+
 {
-    [self.progressBar setProgress:0];
-    [self.twitterLoader
-     loadTwitterDataWithCallback:@"https://api.twitter.com/1.1/statuses/home_timeline.json"
-     withParams:params
-     withProgressCallback:^(CGFloat totalBytes, CGFloat receivedBytes){
-         dispatch_async(dispatch_get_main_queue(), ^{
-             CGFloat percentComplete = (0.8)*(receivedBytes/totalBytes);
-             NSLog(@"Setting Status: %f/%f = %f", receivedBytes, totalBytes, percentComplete);
-             [self.progressBar setProgress:percentComplete animated:false];
-         });
-     }
-     withCompleteCallback:^(NSData* data) {
-         NSError *jsonError;
-         NSArray *results =
-         [NSJSONSerialization
-          JSONObjectWithData:data
-          options:NSJSONReadingAllowFragments error:&jsonError];
+    if(!self.loading){
+        self.loading = true;
+        
+        [self.progressBar setProgress:0];
+        [self.twitterLoader
+         loadTwitterData:@"https://api.twitter.com/1.1/statuses/home_timeline.json"
+         withParams:params
+         withProgressCallback:^(CGFloat totalBytes, CGFloat receivedBytes){
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 CGFloat percentComplete = (0.8)*(receivedBytes/totalBytes);
+                 NSLog(@"Setting Status: %f/%f = %f", receivedBytes, totalBytes, percentComplete);
+                 [self.progressBar setProgress:percentComplete animated:false];
+             });
+         }
+         withCompleteCallback:^(NSData* data) {
+             NSError *jsonError;
+             NSArray *results =
+             [NSJSONSerialization
+              JSONObjectWithData:data
+              options:NSJSONReadingAllowFragments error:&jsonError];
+             
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.progressBar setProgress:0.9];
+             });
+             if(self.twitterTimeline == nil || replace){
+                 self.twitterTimeline = [[NSMutableArray alloc] initWithCapacity:100];
+             }
+             for( NSDictionary *entry in results){
+                 SMLTwitterEntry *newEntry = [[SMLTwitterEntry alloc] init];
+                 newEntry.id = entry[@"id_str"];
+                 newEntry.username = entry[@"user"][@"name"];
+                 newEntry.detail = entry[@"text"];
+                 newEntry.iconImageUrl = entry[@"user"][@"profile_image_url"];
+                 [self.twitterTimeline addObject:newEntry];
+             }
+             [self.activityIndicator stopAnimating];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.tableView reloadData];
+                 [self.progressBar setProgress:1.0];
+             });
+             self.loading = false;
+             if(callback != nil){
+                 callback();
+             }
+         }
          
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [self.progressBar setProgress:0.9];
-         });
-         if(self.twitterTimeline == nil || replace){
-             self.twitterTimeline = [[NSMutableArray alloc] initWithCapacity:100];
-         }
-         for( NSDictionary *entry in results){
-             SMLTwitterEntry *newEntry = [[SMLTwitterEntry alloc] init];
-             newEntry.id = entry[@"id_str"];
-             newEntry.username = entry[@"user"][@"name"];
-             newEntry.detail = entry[@"text"];
-             newEntry.iconImageUrl = entry[@"user"][@"profile_image_url"];
-             [self.twitterTimeline addObject:newEntry];
-         }
-         [self.activityIndicator stopAnimating];
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [self.tableView reloadData];
-             [self.progressBar setProgress:1.0];
-         });
-     }
-     
-     ];
+         ];
+    }
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -134,7 +151,7 @@
     if(entry.userIcon == nil){
         cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
         if(downloadImage){
-            [self.twitterLoader loadImageWithCallback:entry.iconImageUrl withCallback:^(UIImage *image) {
+            [self.twitterLoader loadImage:entry.iconImageUrl withCallback:^(UIImage *image) {
                 entry.userIcon = image;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -166,36 +183,40 @@
     if (indexPath.row < self.twitterTimeline.count) {
         NSDictionary *entry = self.twitterTimeline[indexPath.row];
         
-        //populates the cell
-        [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath withEntry:entry downloadImage:false];
-        
-        CGFloat width = self.tableView.frame.size.width; //minus the 2 x margin
-        
-        CGFloat imageHeight = 0;
-        CGFloat imageWidth = 0;
-        if(self.prototypeCell.imageView.image != nil){
-            imageHeight = self.prototypeCell.imageView.image.size.height;
-            imageWidth = self.prototypeCell.imageView.image.size.height;
-            width = width - imageWidth - 40;
-        }
-        
-        self.prototypeCell.detailTextLabel.frame = CGRectMake(0,0, width, 0);
-        self.prototypeCell.textLabel.frame = CGRectMake(0,0, width, 0);
-        
-        [self.prototypeCell.textLabel sizeToFit];
-        [self.prototypeCell.detailTextLabel sizeToFit];
-        [self.prototypeCell sizeToFit];
-        
-        CGFloat usernameHeight = self.prototypeCell.textLabel.frame.size.height;
-        CGFloat detailHeight = self.prototypeCell.detailTextLabel.frame.size.height;
-        
-        CGFloat textHeight = detailHeight + usernameHeight;
-        
-        if(textHeight > imageHeight)
-        {
-            return textHeight + 10;
+        if(entry != nil){
+            //populates the cell
+            [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath withEntry:entry downloadImage:false];
+            
+            CGFloat width = self.tableView.frame.size.width; //minus the 2 x margin
+            
+            CGFloat imageHeight = 0;
+            CGFloat imageWidth = 0;
+            if(self.prototypeCell.imageView.image != nil){
+                imageHeight = self.prototypeCell.imageView.image.size.height;
+                imageWidth = self.prototypeCell.imageView.image.size.height;
+                width = width - imageWidth - 40;
+            }
+            
+            self.prototypeCell.detailTextLabel.frame = CGRectMake(0,0, width, 0);
+            self.prototypeCell.textLabel.frame = CGRectMake(0,0, width, 0);
+            
+            [self.prototypeCell.textLabel sizeToFit];
+            [self.prototypeCell.detailTextLabel sizeToFit];
+            [self.prototypeCell sizeToFit];
+            
+            CGFloat usernameHeight = self.prototypeCell.textLabel.frame.size.height;
+            CGFloat detailHeight = self.prototypeCell.detailTextLabel.frame.size.height;
+            
+            CGFloat textHeight = detailHeight + usernameHeight;
+            
+            if(textHeight > imageHeight)
+            {
+                return textHeight + 10;
+            } else {
+                return imageHeight + 10;
+            }
         } else {
-            return imageHeight + 10;
+            return 10;
         }
     } else {
         return 100;
@@ -218,7 +239,7 @@
         SMLTwitterEntry* entry = [self.twitterTimeline lastObject];
         NSDictionary *params = @{@"count" : @"100", @"max_id": entry.id};
         [self.activityIndicator startAnimating];
-        [self loadTwitter:params replace:false];
+        [self loadTwitter:params replace:false withCallback:nil];
     }
     return cell;
 }

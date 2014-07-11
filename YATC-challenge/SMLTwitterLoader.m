@@ -31,7 +31,7 @@
             isAvailableForServiceType:SLServiceTypeTwitter];
 }
 
-- (void)loadImageWithCallback:(NSString *)urlString withCallback:(void (^)(UIImage *image))callback
+- (void)loadImage:(NSString *)urlString withCallback:(void (^)(UIImage *image))callback
 {
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -52,7 +52,7 @@
     [task resume];
 }
 
-- (void)loadTwitterDataWithCallback:(NSString *)urlString withParams:(NSDictionary*) params withProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback;
+- (void)loadTwitterData:(NSString *)urlString withParams:(NSDictionary*) params withProgressCallback:(ProgressCallback)progressCallback withCompleteCallback:(CompleteCallback)completeCallback;
 {
     //  Step 0: Check that the user has local Twitter accounts
     if ([self userHasAccessToTwitter]) {
@@ -80,12 +80,7 @@
                  
                  //  Attach an account to the request
                  [request setAccount:[twitterAccounts lastObject]];
-                 
-                 //MYDelegateHandler delegate = new myDelegate
-                 //delegate.setcallbacker = ^()[{
-             //docallback(yada)
-             //}]
-                 
+
                  NSURLRequest *urlRequest = [request preparedURLRequest];
                  NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
 
@@ -96,37 +91,6 @@
                                                                   delegateQueue:[NSOperationQueue currentQueue]];
                  
                  NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:urlRequest];
-/*
-                 NSURLSessionDownloadTask *task =
-                 [session downloadTaskWithRequest:urlRequest
-                                completionHandler:^(NSURL *location, NSURLResponse *urlResponse, NSError *error) {
-                     NSData *responseData = [NSData dataWithContentsOfURL:location];
-                     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)urlResponse;
-                     if (responseData) {
-                         if (httpResponse.statusCode >= 200 &&
-                             httpResponse.statusCode < 300) {
-                             
-                             NSError *jsonError;
-                             NSArray *results =
-                             [NSJSONSerialization
-                              JSONObjectWithData:responseData
-                              options:NSJSONReadingAllowFragments error:&jsonError];
-                             if (results) {
-                                 callback(results);
-                             }
-                             else {
-                                 // Our JSON deserialization went awry
-                                 NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
-                             }
-                         }
-                         else {
-                             // The server did not respond ... were we rate-limited?
-                             NSLog(@"The response status code is %d",
-                                   httpResponse.statusCode);
-                         }
-                     }
-                 }];
-*/
                  
                  [task resume];
              }

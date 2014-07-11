@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
-        <!--View Controller - YATC-->
+        <!--View Controller-->
         <scene sceneID="fK3-N4-es3">
             <objects>
                 <tableViewController id="K6Z-IB-Xcf" customClass="SMLViewController" sceneMemberID="viewController">
@@ -12,6 +12,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="npE-hr-bX6">
+                            <rect key="frame" x="0.0" y="64" width="768" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="WE7-Oo-pkX">
+                            <rect key="frame" x="0.0" y="133" width="768" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Elc-tg-VGG" detailTextLabel="11Z-WK-y9C" style="IBUITableViewCellStyleSubtitle" id="Iyo-Bf-V9l">
                                 <rect key="frame" x="0.0" y="86" width="768" height="44"/>
@@ -41,7 +49,23 @@
                             <outlet property="delegate" destination="K6Z-IB-Xcf" id="N06-ts-Wth"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="YATC" id="shG-Gp-Gmo"/>
+                    <navigationItem key="navigationItem" id="shG-Gp-Gmo">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fqX-Oo-gim">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3iB-tR-8oM">
+                                <rect key="frame" x="-23" y="-15" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="WE7-Oo-pkX" id="P8c-w0-sIq"/>
+                        <outlet property="postButton" destination="3iB-tR-8oM" id="JwW-KR-0eQ"/>
+                        <outlet property="progressBar" destination="npE-hr-bX6" id="9DT-6a-Kaw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EU4-57-kjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
